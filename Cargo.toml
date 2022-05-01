@@ -1,24 +1,18 @@
 [package]
 name = "erasable"
-version = "1.2.1"
-edition = "2018"
+version = "2.0.0"
+edition = "2021"
+rust-version = "1.56"
 
-authors = ["Christopher Durham (cad97) <cad97@cad97.com>"]
 description = "Type-erased thin pointers."
-repository = "https://github.com/CAD97/pointer-utils/tree/master/crates/erasable"
-readme = "README.md"
-keywords = ["thin","pointer","type","erasure"]
-categories = ["data-structures","no-std","rust-patterns"]
+repository = "https://github.com/point-rs/erasable"
+keywords = ["thin", "pointer", "type", "erasure"]
+categories = ["data-structures", "no-std", "rust-patterns"]
 license = "MIT OR Apache-2.0"
 
-[package.metadata.workspaces]
-independent = true
-
-[badges]
-maintenance = { status = "passively-maintained" }
-
 [features]
-default = ["alloc"]
+default = ["std"]
+std = ["alloc"]
 alloc = []
 
 [dependencies]
@@ -26,9 +20,7 @@ scopeguard = { version = "1.1.0", default-features = false }
 
 [dev-dependencies]
 either = "1.5.3"
-
-[build-dependencies]
-autocfg = "1.0.0"
+static_assertions = "1.1.0"
 
 [[test]]
 name = "abuse"
